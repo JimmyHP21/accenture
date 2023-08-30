@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XCClA24UACe17xlg7EzJ7wzAdK91b5ITIc0D6O3MNQWYEceCVzjTHVqkDTrgUbhFnxf/+Im8/t3gLoJfRU9A3w==",
+  "dgSpecHash": "r4FOh0bnrDrTVtNEnNVm5Z9JrITiUZbhl87kGdLASrsF3btOMHKRKRq7tmLwdrfclUy14U7vyWalyEU3emNOHg==",
   "success": true,
-  "projectFilePath": "D:\\Repos\\rhimotech\\backend\\DesafioFULLApi.csproj",
+  "projectFilePath": "D:\\Repos\\accenture\\backend\\DesafioFULLApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Renan\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Renan\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

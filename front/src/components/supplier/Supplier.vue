@@ -3,46 +3,25 @@ import SupplierItem from './SupplierItem.vue';
 </script>
 
 <script>
-  import axios from "axios";
-
   export default {
     name: 'Welcome',
     props: {
-        list: []
+        list: { type: Array }
     },
-    data() {
-      return {
-        data: []
-      }
-    },
-    created() {
-      this.getCompanys();
-      console.log(this.list)
-    },
-    methods: {
-      getCompanys() {
-        axios
-          .get("https://localhost:5001/api/Company")
-          .then((res) => {
-              this.data = res.data;
-          })
-          .catch((error) => {
-                  console.log(error);
-          });
-      }
-    }
+    created() { },
+    methods: {}
   }
 </script>
 
 <template>
   <SupplierItem v-for="item in list" v-if="list.length > 0">
     <template #cnpj>
-      {{item.CnpjSupplier}}
+      {{item.cnpjSupplier}}
     </template>
     <template #stateRegi>
-      {{item.StateRegistration}}
+      {{item.stateRegistration}}
     </template>
 
-    <template #ramo>{{item.Business}}</template>
+    <template #ramo>{{item.business}}</template>
   </SupplierItem>
 </template>

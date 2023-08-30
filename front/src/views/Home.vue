@@ -9,7 +9,6 @@ defineProps({
 </script>
 
 <template>
-  
   <div class="table__content">
     <Company />
   </div>

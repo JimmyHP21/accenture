@@ -10,6 +10,7 @@ defineProps({
 
 <script>
   import axios from "axios";
+  import router from "@/router";
 
   export default {
     name: 'Register',
@@ -29,10 +30,10 @@ defineProps({
           suppliers: []
         },
         list: {
-          NameSupplier: '',
-			    CnpjSupplier: '',
-			    StateRegistration: '',
-			    Business: ''
+          nameSupplier: '',
+			    cnpjSupplier: '',
+			    stateRegistration: '',
+			    business: ''
         }
       }
     },
@@ -42,7 +43,7 @@ defineProps({
         axios
           .post("https://localhost:5001/api/Company/new", this.form)
           .then(() => {
-            console.log('Sucesso')
+            router.replace({ path: '/' })
           })
           .catch((error) => {
             console.log(error)
@@ -50,20 +51,20 @@ defineProps({
       },
       addSupplier() {
         this.form.suppliers.push({
-          nameSupplier: this.list.NameSupplier,
-			    CnpjSupplier: this.list.CnpjSupplier,
-			    StateRegistration: this.list.StateRegistration,
-			    Business: this.list.Business
+          nameSupplier: this.list.nameSupplier,
+			    cnpjSupplier: this.list.cnpjSupplier,
+			    stateRegistration: this.list.stateRegistration,
+			    business: this.list.business
         })
 
         this.clean()
       },
       clean() {
         this.list = {
-          NameSupplier: '',
-			    CnpjSupplier: '',
-			    StateRegistration: '',
-			    Business: ''
+          nameSupplier: '',
+			    cnpjSupplier: '',
+			    stateRegistration: '',
+			    business: ''
         }
       }
     },
@@ -105,12 +106,12 @@ defineProps({
 
     <form class="register_form">
       <div class="row">
-        <input v-model="list.NameSupplier" placeholder="Nome do Fornecedor"  />
-        <input v-model="list.CnpjSupplier" placeholder="CNPJ do Fornecedor"  />
+        <input v-model="list.nameSupplier" placeholder="Nome do Fornecedor"  />
+        <input v-model="list.cnpjSupplier" placeholder="CNPJ do Fornecedor"  />
       </div>
       <div class="row">
-        <input v-model="list.StateRegistration" placeholder="Registro de Estado"  />
-        <input v-model="list.Business" placeholder="Ramo"  />
+        <input v-model="list.stateRegistration" placeholder="Registro de Estado"  />
+        <input v-model="list.business" placeholder="Ramo"  />
       </div>
     </form>
 

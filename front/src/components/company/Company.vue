@@ -4,6 +4,7 @@ import CompanyItem from './CompanyItem.vue';
 
 <script>
   import axios from "axios";
+  import router from "@/router";
 
   export default {
     name: 'Welcome',
@@ -20,10 +21,23 @@ import CompanyItem from './CompanyItem.vue';
         axios
           .get("https://localhost:5001/api/Company")
           .then((res) => {
-              this.data = res.data;
+              this.data = res.data || [];
           })
           .catch((error) => {
-                  console.log(error);
+            console.log(error);
+          });
+      },
+      getData(id) {
+        router.replace({ path: '/edit/' + id})
+      },
+      deleteCompany(id) {
+        axios
+          .delete("https://localhost:5001/api/Company/delete/" + id)
+          .then((res) => {
+              this.data = res.data || [];
+          })
+          .catch((error) => {
+            console.log(error);
           });
       }
     }
@@ -45,5 +59,22 @@ import CompanyItem from './CompanyItem.vue';
     <template #state>{{item.state}}</template>
     
     <template #forn> {{ item.suppliers.length }} </template>
+
+    <button class="edit" @click="getData(item.id)">E</button>
+    <button class="delete" @click="deleteCompany(item.id)">D</button>
   </CompanyItem>
 </template>
+
+<style lang="scss">
+  .edit {
+    background-color: #0f0 !important;
+    color: black;
+    font-weight: 600;
+  }
+
+  .delete {
+    background-color: #f00 !important;
+    color: #fff;
+    font-weight: 600;
+  }
+</style>

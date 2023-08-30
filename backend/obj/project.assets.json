@@ -8168,11 +8168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repos\\rhimotech\\backend\\DesafioFULLApi.csproj",
+      "projectUniqueName": "D:\\Repos\\accenture\\backend\\DesafioFULLApi.csproj",
       "projectName": "DesafioFULLApi",
-      "projectPath": "D:\\Repos\\rhimotech\\backend\\DesafioFULLApi.csproj",
+      "projectPath": "D:\\Repos\\accenture\\backend\\DesafioFULLApi.csproj",
       "packagesPath": "C:\\Users\\Renan\\.nuget\\packages\\",
-      "outputPath": "D:\\Repos\\rhimotech\\backend\\obj\\",
+      "outputPath": "D:\\Repos\\accenture\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Renan\\AppData\\Roaming\\NuGet\\NuGet.Config",
